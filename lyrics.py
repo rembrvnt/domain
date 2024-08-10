@@ -18,27 +18,27 @@ def sing_lyric(lyric, delay, speed):
 
 def sing_song():
     lyrics = [
-        ("Do you think I have forgotten?", 0.1),
-        ("Do you think I have forgotten?", 0.1),
-        ("Do you think I have forgotten", 0.1),
-        ("about you?", 0.2),
-        ("There was something bout you that now I cant remember", 0.08),
-        ("Its the same damn thing that made my heart surrender", 0.1),
-        ("And I miss you on a train, I miss you in the morning", 0.1),
-        ("I never know what to think about", 0.1),
-        ("I think about youuuuuuuuuuuuuuuuuuuuuuuuuuu", 0.1)
+        ("\n""Take me home, I'm fallin", 0.10),
+        ("Love me long, I'm rollin", 0.09),
+        ("Losing control, body and soul", 0.09),
+        ("Mind too for sure, I'm already yours", 0.10),
+        ("Walk you down, I'm all in", 0.10),
+        ("Hold you tight, you call and", 0.09),
+        ("I'll take control, your body and soul", 0.07),
+        ("Mind too for sure, I'm already yours", 0.09),
     ]
-    delays = [0.3, 5.0, 10.0, 15.0, 20.3, 25.0, 27.0, 30.2, 33.3]
-    
+    delays = [0.3, 3.9, 7.0, 10.5, 15.0, 18.5, 21.5, 24.9]
+
     threads = []
     for i in range(len(lyrics)):
         lyric, speed = lyrics[i]
         t = Thread(target=sing_lyric, args=(lyric, delays[i], speed))
         threads.append(t)
         t.start()
-    
+
     for thread in threads:
         thread.join()
 
 if __name__ == "__main__":
-    sing_song() #extracted from lmnz
+    sing_song()
+    #extracted from lmz
